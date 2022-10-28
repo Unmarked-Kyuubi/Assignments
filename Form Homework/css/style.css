@@ -1,0 +1,402 @@
+@font-face{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  src: local("Poppins Light"),local(Poppins-Light),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLDz8Z1JlEw.woff) format("woff"),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLDz8Z1JlEQ.eot?#) format("eot"),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2) format("woff2");
+}
+@font-face{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Poppins Regular"),local(Poppins-Regular),url(//fonts.gstatic.com/s/poppins/v13/pxiEyp8kv8JHgFVrJJnedA.woff) format("woff"),url(//fonts.gstatic.com/s/poppins/v13/pxiEyp8kv8JHgFVrJJnedg.eot?#) format("eot"),url(//fonts.gstatic.com/s/poppins/v13/pxiEyp8kv8JHgFVrJJfecg.woff2) format("woff2");
+}
+@font-face{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  src: local("Poppins SemiBold"),local(Poppins-SemiBold),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLEj6Z1JlEw.woff) format("woff"),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLEj6Z1JlEQ.eot?#) format("eot"),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format("woff2");
+}
+@font-face{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Poppins Bold"),local(Poppins-Bold),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLCz7Z1JlEw.woff) format("woff"),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLCz7Z1JlEQ.eot?#) format("eot"),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format("woff2");
+}
+@font-face{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 800;
+  src: local("Poppins ExtraBold"),local(Poppins-ExtraBold),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLDD4Z1JlEw.woff) format("woff"),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLDD4Z1JlEQ.eot?#) format("eot"),url(//fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLDD4Z1xlFQ.woff2) format("woff2");
+}
+
+
+:root {
+  /* Black and white */
+  /* Grays and browns */
+  --gray-200: #e9ecef;
+  /* Light color variables */
+  --clr-teal-light-400: #3ad9aa;
+  /* Dark color variables */
+  /* Spacing variables */
+  /* Typography variables */
+  /* Font weight */
+  /* line height */
+  /* Font size */
+  --fs-2: clamp(1.44rem, 1.26rem + 0.88vw, 2.05rem);
+  --fs-0: clamp(1rem, 0.91rem + 0.45vw, 1.31rem);
+  --fs--1: clamp(0.83rem, 0.77rem + 0.31vw, 1.05rem);
+  --fs--2: clamp(0.69rem, 0.65rem + 0.21vw, 0.84rem);
+  /* Animation Variables */
+  --easeSquish: cubic-bezier(0.5, -0.5, 0.1, 1.5);
+  /* Border Variables */
+  /* Border Size */
+  /* Border Radius */
+}
+
+/* ================================== */
+/* CSS RESET */
+/* ================================== */
+/* Using a more spontaneous box-sizing model. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+/* Setting core body defaults  */
+body {
+  min-height: 100vh;
+}
+
+/* Setting core root defaults 
+  ~ Adding smooth scrolling */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Make media defaults easier to work with */
+
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  color: var(--color-gray-700);
+  background-color: var(--color-gray-100);
+}
+
+
+h2 {
+  color: var(--color-gray-800);
+  line-height: 1.3;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+/* TYPOGRAPHY UTILITY STYLES */
+/* Setting core body defaults 
+ ~ Adding accessible line-height
+ ~ Improving text rendering */
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  font-weight: 400;
+}
+
+/* Remove default margin */
+body,
+h2,
+p {
+  margin: 0;
+}
+
+/* Avoid text overflows */
+p,
+h2 {
+  overflow-wrap: break-word;
+}
+
+/* Anchor elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Remove built-in typography styles from forms, form inputs, and buttons */
+input,
+button,
+select {
+  font: inherit;
+}
+
+.background {
+  width: 26.875rem;
+  height: 32.5rem;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.background .shape {
+  height: 12.5rem;
+  width: 12.5rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shape:first-child {
+  background: linear-gradient(#1845ad, #23a2f6);
+  left: -5rem;
+  top: -5rem;
+}
+
+.shape:last-child {
+  background: linear-gradient(to right, #ff512f, #f09819);
+  right: -1.875rem;
+  bottom: -5rem;
+}
+
+.reg-shape:last-child {
+  right: -14rem;
+  bottom: -8rem;
+}
+
+.container {
+  margin-inline: auto;
+  width: min(100% - 2.2rem, 83.5rem);
+}
+
+@media (min-width: 62em) {
+  .container {
+    margin-inline: auto;
+    width: min(60% - 4.2rem, 83.5rem);
+  }
+}
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #080710;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form page styles */
+form {
+  width: 25rem;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 0.625rem;
+  -webkit-backdrop-filter: blur(0.625rem);
+          backdrop-filter: blur(0.625rem);
+  border: 0.125rem solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 2.5rem rgba(8, 7, 16, 0.6);
+  padding: 3.125rem 2.1875rem;
+}
+
+form * {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.03125rem;
+  outline: none;
+  border: none;
+}
+
+.heading__text {
+  font-size: var(--fs-2);
+  font-weight: 500;
+  line-height: 2.625rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 1.875rem;
+  font-size: var(--fs-0);
+  font-weight: 500;
+}
+
+input,
+select {
+  display: block;
+  height: 3.125rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 0.1875rem;
+  padding: 0 0.625rem;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-size: var(--fs--1);
+  font-weight: 300;
+}
+
+::-moz-placeholder {
+  color: #e5e5e5;
+}
+
+::placeholder {
+  color: #e5e5e5;
+}
+
+button {
+  margin-top: 3.125rem;
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 0.9375rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+}
+
+.password-hint {
+  font-size: calc(var(--fs--2) * 1.1);
+}
+
+.heading__icon {
+  width: 5rem;
+  height: 5rem;
+  margin-inline: auto;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+  fill: var(--gray-200);
+}
+
+@media (min-width: 62em) {
+  .reg-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.form-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin-inline: auto;
+  text-align: center;
+  margin-block: 2rem 0;
+  font-weight: 600;
+}
+.form-footer--reg {
+  margin-block: 1rem 0;
+}
+
+@media (min-width: 62em) {
+  .heading,
+.form-input--date {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 62em) {
+  .forgotpsswd {
+    grid-column: span 2;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 62em) {
+  .sign-up {
+    grid-column: span 2;
+    width: 80%;
+    margin-inline: auto;
+  }
+}
+
+.sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ENd of Form page styles */
+/* Success page styles */
+.success {
+  width: 25rem;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 0.625rem;
+  -webkit-backdrop-filter: blur(0.625rem);
+          backdrop-filter: blur(0.625rem);
+  border: 0.125rem solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 2.5rem rgba(8, 7, 16, 0.6);
+  padding: 3.125rem 2.1875rem;
+}
+.success__text-container {
+  text-align: center;
+  color: #eaf0fb;
+}
+.success-icon {
+  fill: var(--clr-teal-light-400);
+}
+.success-title {
+  font-size: var(--fs-2);
+}
+.success-text {
+  font-size: var(--fs-0);
+}
+.success-back:-moz-any-link {
+  font-size: var(--fs-0);
+  color: #eaf0fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 0.5rem;
+  -moz-transition: all 350ms var(--easeSquish);
+  transition: all 350ms var(--easeSquish);
+}
+.success-back:any-link {
+  font-size: var(--fs-0);
+  color: #eaf0fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 0.5rem;
+  transition: all 350ms var(--easeSquish);
+}
+.success-back:hover, .success-back:focus {
+  color: #ffffff;
+}
+.success-back:hover svg, .success-back:focus svg {
+  translate: -0.1875rem;
+}
+.success-back-icon {
+  transition: all 350ms var(--easeSquish);
+  height: 2rem;
+  fill: #eaf0fb;
+}
+
+/* ENd of Success page styles♫ */
