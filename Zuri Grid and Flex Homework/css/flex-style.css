@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  /* Colors  */
+  /* Brand Colors */
+  --brand-bright-orange: hsl(31, 77%, 52%);
+  --brand-dark-cyan: hsl(184, 100%, 22%);
+  --brand-very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* Neutral Colors */
+
+  --nuetral-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --nuetral-very-light-gray: hsl(0, 0%, 95%);
+
+  /* Font size */
+  --font-size-body: 0.9375rem;
+
+  /* Fonts  */
+  /* HEadings */
+  --font-heading: "Big Shoulders Display", cursive;
+
+  /* Paragphs  */
+  --font-body: "Lexend Deca", sans-serif;
+}
+
+/* ================================== */
+/* CSS RESET */
+/* ================================== */
+/* Using a more spontaneous box-sizing model. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Setting core body defaults  */
+body {
+  min-height: 100vh;
+}
+
+/* Setting core root defaults 
+   ~ Adding smooth scrolling */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Make media defaults easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  color: var(--gray-700);
+  background-color: var(--gray-100);
+}
+
+section,
+article,
+.container {
+  scroll-margin: 7rem;
+}
+@media (max-width: 47.99875em) {
+  section,
+  article,
+  .container {
+    scroll-margin: 16rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--gray-800);
+  line-height: 1.3;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+/* TYPOGRAPHY UTILITY STYLES */
+/* Setting core body defaults 
+  ~ Adding accessible line-height
+  ~ Improving text rendering */
+body {
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  font-weight: 400;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Anchor elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Remove built-in typography styles from forms, form inputs, and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  background-color: var(--nuetral-very-light-gray);
+}
+
+/*
+Utility classes  */
+.card-container {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  width: min(80% - 2.2rem, 83rem);
+
+  margin: auto;
+  border-radius: 0.75rem;
+
+  overflow: hidden;
+  background-color: var(--clr-blue-dark-800);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+/* ENd of Utility classes  */
+
+/* Card components  */
+
+.card {
+  padding: 3rem;
+  font-size: var(--font-size-body);
+  display: grid;
+  gap: 2.5rem;
+  color: var(--nuetral-transparent-white);
+  width: 100%;
+}
+
+.card--one {
+  background-color: var(--brand-bright-orange);
+}
+.card--two {
+  background-color: var(--brand-dark-cyan);
+}
+.card--three {
+  background-color: var(--brand-very-dark-cyan);
+}
+
+.card__text-container {
+  display: grid;
+  gap: 1.25rem;
+  margin-block-end: 2.75rem;
+}
+.card__title {
+  font-size: 2rem;
+  color: var(--nuetral-very-light-gray);
+  font-family: var(--font-heading);
+}
+
+.card__link:any-link {
+  font-family: var(--font-body);
+  background-color: var(--nuetral-very-light-gray);
+  padding: 0.75em 1em;
+  border: 0.125rem solid var(--nuetral-very-light-gray);
+  width: min(70%, 11rem);
+  font-size: var(--font-size-body);
+  border-radius: 100vmax;
+  text-align: center;
+  font-weight: 400;
+}
+
+.link--one:any-link {
+  color: var(--brand-bright-orange);
+}
+
+.link--two:any-link {
+  color: var(--brand-dark-cyan);
+}
+.link--three:any-link {
+  color: var(--brand-very-dark-cyan);
+}
+
+.card__link:hover,
+.card__link:focus {
+  color: var(--nuetral-transparent-white);
+  background-color: transparent;
+}
+
+@media (max-width: 65em) {
+  .container {
+    grid-template-columns: 1fr;
+
+    width: min(60% - 2.2rem, 83rem);
+  }
+}
+
+@media (max-width: 48em) {
+  .container {
+    grid-template-columns: 1fr;
+
+    width: min(80% - 2.2rem, 83rem);
+  }
+}
+/* ENd of Card components  */
+
+.top-link:any-link {
+  margin: 2rem 1rem 4rem;
+  color:  #333;
+  border-radius: 100vmax;
+  font-weight: 600;
+  font-size: clamp(1.2rem, calc(1.07rem + 0.63vw), 1.64rem);
+}
+.link-text {
+  transition: all 350ms ease-in-out;
+  
+}
+.top-link:hover .link-text {
+  margin-inline-end: .35rem;
+}
